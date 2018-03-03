@@ -36,29 +36,25 @@
 	    	'keydown' , function(event) {
 		    	 if(event.keyCode == 40) {
 		            if(tag !== options.maxPage - 1){
-		                if(!_this .is(":animated")){
-		                    tag += 1;
-		                    _this.css({
-		                        transition : 'transform 1s ease',
-		                        transform : function () {
-		                            current_Y  -= $sections[0].offsetHeight;
-		                            return 'translateY('+ current_Y +'px)';
-                        		}
-                   			 });
-		                }
+	                    tag += 1;
+	                    _this.css({
+	                        transition : 'transform 1s ease',
+	                        transform : function () {
+	                            current_Y  -= $sections[0].offsetHeight;
+	                            return 'translateY('+ current_Y +'px)';
+                    		}
+               			 });
 		            }
 		       	 }else if(event.keyCode == 38) {
 		           if(tag !== 0){         
-		                if(!_this .is(":animated")){
-		                    tag -= 1;
-		                    _this.css({
-		                        transition : 'transform 1s ease',
-		                        transform : function () {
-                            		current_Y  += $sections[0].offsetHeight;
-                            		return 'translateY('+current_Y +'px)';
-                        		}
-                    		});
-		                }
+	                    tag -= 1;
+	                    _this.css({
+	                        transition : 'transform 1s ease',
+	                        transform : function () {
+                        		current_Y  += $sections[0].offsetHeight;
+                        		return 'translateY('+current_Y +'px)';
+                    		}
+                		});
 		            }
 		         }
 	   		 });
@@ -68,29 +64,25 @@
 	    	var delta = event.originalEvent.detail !== 0 ? -event.originalEvent.detail : event.originalEvent.wheelDelta;
 	    	if(delta < 0) {
 	    		if(tag !== options.maxPage - 1){
-	    		    if(!_this .is(":animated")){
-	    		        tag += 1;
-	    		        _this.css({
-	                        transition : 'transform 1s ease',
-	                        transform : function () {
-	                            current_Y  -= $sections[0].offsetHeight;
-	                            return 'translateY('+ current_Y +'px)';
-                    		}
-                   		});
-	    		    }
+    		        tag += 1;
+    		        _this.css({
+                        transition : 'transform 1s ease',
+                        transform : function () {
+                            current_Y  -= $sections[0].offsetHeight;
+                            return 'translateY('+ current_Y +'px)';
+                		}
+               		});
 	    		}
 	    	}else if(delta > 0) {
 	    		if(tag !== 0){         
-	    		       if(!_this .is(":animated")){
-	    		           tag -= 1;
-	    		           _this.css({
-		                        transition : 'transform 1s ease',
-		                        transform : function () {
-                            		current_Y  += $sections[0].offsetHeight;
-                            		return 'translateY('+current_Y +'px)';
-                        		}
-                    		});
-	    		       }
+		           tag -= 1;
+		           _this.css({
+                        transition : 'transform 1s ease',
+                        transform : function () {
+                    		current_Y  += $sections[0].offsetHeight;
+                    		return 'translateY('+current_Y +'px)';
+                		}
+            		});
 	    		 }
 	    	}
 	    });
