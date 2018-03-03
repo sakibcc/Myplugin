@@ -8,6 +8,7 @@
 		var tag = 0,
 			_this = $(this);
 		//配置关键样式
+		$('body').css('overflow', 'hidden');
 		_this .css({
 			position: 'relative',
 			top: '0'
