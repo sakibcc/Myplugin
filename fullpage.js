@@ -2,9 +2,11 @@
 	$.fn.fullpage = function (options) {
 		//pageClass : 子页面的类名
 		//maxPage ： 子页面的总数
+		//speed : 滑动速度
 		options = $.extend({
 			pageClass : "pages",
-			maxPage : 5
+			maxPage : 5,
+			speed : 1000
 		},options);
 		
 		var tag = 0,
@@ -32,33 +34,34 @@
 		            if(tag !== options.maxPage - 1){
 		                if(!_this .is(":animated")){
 		                    tag += 1;
-		                    _this .animate({top : "-="+$sections[0].offsetHeight}, 1000)
+		                    _this .animate({top : "-="+$sections[0].offsetHeight}, options.speed);
 		                }
 		            }
 		       	 }else if(event.keyCode == 38) {
 		           if(tag !== 0){         
 		                if(!_this .is(":animated")){
 		                    tag -= 1;
-		                    _this .animate({top : "+="+$sections[0].offsetHeight}, 1000)
+		                    _this .animate({top : "+="+$sections[0].offsetHeight}, options.speed);
 		                }
 		            }
 		         }
 	   		 });
 	    //绑定滚轮事件
 	    $(window).on('mousewheel DOMMouseScroll', function(event) {
+	    	//兼容firefox
 	    	var delta = event.originalEvent.detail !== 0 ? -event.originalEvent.detail : event.originalEvent.wheelDelta;
 	    	if(delta < 0) {
 	    		if(tag !== options.maxPage - 1){
 	    		    if(!_this .is(":animated")){
 	    		        tag += 1;
-	    		        _this .animate({top : "-="+$sections[0].offsetHeight}, 1000)
+	    		        _this .animate({top : "-="+$sections[0].offsetHeight}, options.speed);
 	    		    }
 	    		}
 	    	}else if(delta > 0) {
 	    		if(tag !== 0){         
 	    		       if(!_this .is(":animated")){
 	    		           tag -= 1;
-	    		           _this .animate({top : "+="+$sections[0].offsetHeight}, 1000)
+	    		           _this .animate({top : "+="+$sections[0].offsetHeight}, options.speed);
 	    		       }
 	    		 }
 	    	}
