@@ -88,7 +88,6 @@
 	    //绑定触屏滑动事件
 	    $(window).on('touchstart', function(e) {
 	    	var event = e || window.event;
-	    	event.preventDefault();
 	    	startY = event.originalEvent.changedTouches[0].pageY;
 	    });
 	    $(window).on('touchmove', function(e) {
