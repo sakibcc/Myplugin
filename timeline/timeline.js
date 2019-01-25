@@ -113,5 +113,5 @@
   }
 
   _global = (function () {return this || (0,eval)('this');}());
-	 ! ('OpTimeLine' in _global) && (_global.OpTimeLine = OpTimeLine);
+	 !('OpTimeLine' in _global) && (_global.OpTimeLine = OpTimeLine);
 }())
